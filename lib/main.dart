@@ -121,7 +121,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Expanded(
                     child: GridView.count(
-                      padding: EdgeInsets.only(top: 48, right: 80),
+                      physics: const NeverScrollableScrollPhysics(),
+                      padding: const EdgeInsets.only(top: 48, right: 80),
                       crossAxisSpacing: 44,
                       mainAxisSpacing: 44,
                       crossAxisCount: 3,
