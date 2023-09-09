@@ -34,36 +34,98 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: const Color(0xFFFBFBFB),
         body: Row(children: [
           Container(
-            decoration: BoxDecoration(
-              color: Colors.amber,
+            decoration: const BoxDecoration(
+              color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
+                  color: Color(0x0C000000),
+                  blurRadius: 20,
+                  offset: Offset(8, 0),
+                  spreadRadius: 3,
                 )
               ],
             ),
-            width: 60,
+            width: 100,
             child: const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.home_filled),
-                SizedBox(height: 16),
-                Icon(Icons.contact_page),
-                SizedBox(height: 16),
-                Icon(Icons.palette),
-                SizedBox(height: 16),
-                Icon(Icons.manage_search_outlined),
+                Padding(
+                  padding: EdgeInsets.only(top: 60),
+                  child: CircleAvatar(radius: 25),
+                ),
+                Expanded(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        Icons.home_filled,
+                        size: 40,
+                      ),
+                      SizedBox(height: 16),
+                      Icon(
+                        Icons.contact_page,
+                        size: 40,
+                      ),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Icon(
+                        Icons.palette,
+                        size: 40,
+                      ),
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Icon(
+                        Icons.manage_search_outlined,
+                        size: 40,
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
           const Expanded(
-            child: Center(
-              child: Text('This is content'),
+            child: Padding(
+              padding: EdgeInsets.all(60.0),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'เมนูหลัก',
+                        style: TextStyle(fontSize: 32),
+                      ),
+                      Row(
+                        children: [
+                          Icon(
+                            Icons.notifications_outlined,
+                            size: 32,
+                          ),
+                          SizedBox(
+                            width: 20,
+                          ),
+                          Icon(Icons.account_circle_outlined, size: 32),
+                          SizedBox(width: 8),
+                          Text(
+                            'Username',
+                            style: TextStyle(fontSize: 20),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: Text('This is content'),
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ]),
